@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "db": "mongodb+srv://Nikk:nik246810@cluster0-lbom9.gcp.mongodb.net/app?retryWrites=true&w=majority",
+  "secret": "questions-app"
+}

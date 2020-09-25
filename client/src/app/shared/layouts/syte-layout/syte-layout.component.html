@@ -1,0 +1,69 @@
+<section>
+  <header class="header">
+    <div class="container d-flex">
+      <div (click)="showNavMenu()" class="btn_menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div routerLink="/tasks" class="logo">
+        <div class="txt_logo">
+          Quest
+        </div>
+        <div class="img_logo">
+
+        </div>
+      </div>
+      <div class="account_menu d-flex flex-center">
+        <div class="d-flex flex-center">
+          <div class="user_photo">
+            <img src="" alt="">
+          </div>
+          <div *ngIf="isAuth" class="user_name">
+            Привіт, {{auth.user?.login}}
+          </div>
+          <div *ngIf="!isAuth" class="user_name">
+            Привіт, увійдіть
+          </div>
+        </div>
+        <div (click)="showMenu()" id="auth_menu">
+          <i class="fas fa-user-circle"></i>
+          <i id="sort" class="fas fa-sort-up"></i>
+          <ul id="auth_list">
+            <li *ngIf="!isAuth" routerLink="/register" class="d-flex">
+              <i class="fas fa-book-open"></i>
+              Приєднатися
+            </li>
+            <li *ngIf="!isAuth" routerLink="/login" class="d-flex">
+              <i class="fas fa-sign-in-alt"></i>
+              Увійти
+            </li>
+            <li (click)="logOut()" *ngIf="isAuth" class="d-flex">
+              <i class="fas fa-sign-out-alt"></i>
+              Вийти
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="aside">
+    <nav class="nav_bar_menu">
+      <ul class="items_container ">
+        <li routerLink="/tasks" class="items d-flex flex-center">
+          <i class="far fa-question-circle"></i>
+          <a>
+            Квести
+          </a>
+        </li>
+        <li routerLink="/option-quest" class="items d-flex flex-center">
+          <i class="fas fa-ellipsis-h"></i>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</section>

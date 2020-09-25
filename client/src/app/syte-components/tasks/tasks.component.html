@@ -1,0 +1,17 @@
+<div class="d-flex j-around">
+  <div *ngFor="let quest of tasks" class="quest_container">
+    <div class="quest_img d-flex">
+      <img src="{{quest.image}}" alt="{{quest.id}}">
+    </div>
+    <div class="quest_title">
+      <h3>{{quest.title}}</h3>
+    </div>
+    <div class="quest_description">
+      {{quest.description}}
+    </div>
+    <div routerLink='/task/{{quest?._id}}' class="quest_detail">
+      <a>Детальніше</a>
+    </div>
+  </div>
+</div>
+

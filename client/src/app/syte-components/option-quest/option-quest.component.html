@@ -1,0 +1,12 @@
+<div class="options-container">
+  <nav class="d-flex nav-option">
+    <div (click)="changeOption(true, false)" class="option-btn">Створити Квест</div>
+    <div (click)="changeOption(true, false)" class="option-btn">Редагувати Квест</div>
+  </nav>
+  <div *ngIf="isUpdate">
+    <app-update-quest></app-update-quest>
+  </div>
+  <div *ngIf="isCreate">
+    <app-create-quest></app-create-quest>
+  </div>
+</div>

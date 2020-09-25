@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="container d-flex">
+    <div routerLink="/tasks" class="logo">
+      <div class="txt_logo">
+        Quest
+      </div>
+    </div>
+    <div class="account_menu d-flex flex-center">
+      <div class="d-flex flex-center">
+        <div class="user_photo">
+          <img src="" alt="">
+        </div>
+        <div *ngIf="isAuth" class="user_name">
+          Щасти, {{auth.user?.login}}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="d-flex justify-center">
+  <section class="d-flex justify-center">
+    <router-outlet></router-outlet>
+  </section>
+</main>
+

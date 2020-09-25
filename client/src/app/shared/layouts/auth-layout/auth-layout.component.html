@@ -1,0 +1,31 @@
+<section>
+  <header class="header">
+    <div class="container d-flex">
+      <div routerLink="/tasks" class="logo">
+        <div class="txt_logo">
+          Quest
+        </div>
+        <div class="img_logo">
+
+        </div>
+      </div>
+      <div class="account_menu d-flex flex-center">
+        <div class="nav">
+          <a routerLink="/login" class="">Увійти</a>
+        </div>
+        <div class="nav">
+          <a routerLink="/register">Зареєструватися</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="model" class="model_window d-flex flex-center">
+    <div class="form d-flex flex-center">
+      <div >
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,15 @@
+<div class="quest_container d-flex flex-center">
+  <div class="quest_img d-flex flex-center">
+    <img  [src]="quest?.image" alt="">
+  </div>
+  <div class="quest_description">
+    <div *ngIf="quest?.title" class="quest_title">
+      {{quest.title}}
+    </div>
+    <p *ngIf="quest?.description">{{quest.description}}</p>
+  </div>
+</div>
+
+<div routerLink="/quest/{{quest?._id}}" class="btn">
+  Почати проходження
+</div>

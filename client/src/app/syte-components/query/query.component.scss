@@ -1,0 +1,40 @@
+
+
+
+.query {
+  text-align: center;
+}
+
+.file {
+  margin: 20px auto;
+  width: 60px;
+  height: 60px;
+  i {
+    font-size: 60px;
+  }
+}
+
+#file {
+  display: none;
+}
+
+.quantity {
+  text-align: center;
+}
+
+#quantity {
+  width: 100px;
+  text-align: center;
+}
+
+.answers {
+  text-align: center;
+}
+
+.margin {
+  margin: 20px 0;
+}
+
+input:focus {
+  border-bottom: 1px solid #0003ed;
+}

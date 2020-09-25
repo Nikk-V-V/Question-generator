@@ -1,0 +1,46 @@
+<div class="d-flex justify-center" *ngIf="quest.questId">
+  <div class="creat-query-container margin">
+    <div class="query margin">
+      <p>Запитання</p>
+      <label>
+        <input [(ngModel)]="queryTitle" type="text">
+      </label>
+    </div>
+    <div>
+      <p>Оберіть картинку або відео, якщо воно потрібне для запитання</p>
+      <div class="file d-flex justify-center flex-center">
+        <label *ngIf="!file">
+          <input (change)="onFileSelect($event)" id="file" type="file">
+          <i class="fas fa-file-upload"></i>
+        </label>
+        <div *ngIf="file">
+           Завантажено
+        </div>
+      </div>
+    </div>
+    <div class="answers margin">
+      <div class="answer">
+        <p>Введіть відповідь</p>
+        <label>
+          <input [(ngModel)]="answer" type="text">
+        </label>
+      </div>
+      <div class="quantity margin">
+        <p class="margin">Ввеліть кількість альтернативних відповідей</p>
+        <label>
+          <input (change)="createInputAnswer()" id="quantity" type="number" min="4" value="4">
+        </label>
+        <button (click)="createInputAnswer()">Задати</button>
+      </div>
+      <div class="alternative-answers">
+        <p class="margin">Введіть також основну віповідь</p>
+        <div id="alternative-answers">
+
+        </div>
+        <div class="bnt-create">
+          <button (click)="create()">Створити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

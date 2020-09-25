@@ -1,0 +1,23 @@
+.form {
+  position: relative;
+  padding: 30px;
+  background-color: #ff00007a;
+  border: 0;
+  border-radius: 20px;
+}
+
+#model {
+  height: 100vh;
+}
+
+.nav {
+  padding: 20px;
+  cursor: pointer;
+  transition: all 1s ease-in;
+  a{
+    font-size: 14px;
+  }
+}
+.nav:hover {
+  background-color: #ff000026;
+}

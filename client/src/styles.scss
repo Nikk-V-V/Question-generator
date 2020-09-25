@@ -1,0 +1,215 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1rem;
+}
+*:focus {
+  outline: none;
+}
+body {
+  background-image: url("./assets/img/background.png");
+  background-color: black;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+}
+
+.d-flex {
+  display: flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.j-around {
+  justify-content: space-around;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+input {
+  background-color: #74000000;
+  border: 0;
+  padding: 5px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid;
+}
+input:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+input::placeholder {
+  color: white;
+}
+button {
+  background-color: #240101e6;
+  padding: 10px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 13px;
+  position: relative;
+}
+button:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000bd;
+}
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #000000d6;
+  position: fixed;
+  font-size:14px;
+  top: 0;
+  .logo {
+    cursor: pointer;
+    .txt_logo {
+      font-family: "Roboto Black",sans-serif;
+      font-size: 24px;
+      text-shadow: 0 0 20px white;
+    }
+  }
+}
+.container {
+  height: 100%;
+  padding: 0 70px;
+  align-items: center;
+  box-shadow: 0 0 1px #ff0000;
+}
+.btn_menu {
+  position: relative;
+  right: 45px;
+  font-size: 20px;
+  cursor: pointer;
+}
+#aside {
+  height: 89vh;
+  position: fixed;
+  top: 60px;
+  background-color: #000000d6;
+  border-right: 1px solid #8202026e;
+  transition: all 1.5s ease-in;
+  overflow: hidden;
+  .nav_bar_menu {
+    .items_container {
+      list-style: none;
+      flex-wrap: wrap;
+      .items {
+        padding: 16px 0px 16px 0px;
+        height: 70px;
+        transition: all 1s ease-in;
+        cursor: pointer;
+        text-align: center;
+        i {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+        a {
+          width: 100%;
+          font-size: 10px;
+          text-decoration: none;
+        }
+      }
+      .items:hover {
+        background-color: #3d36368f;
+      }
+    }
+  }
+}
+
+.account_menu {
+  margin-left: auto;
+  position: relative;
+}
+.user_photo{
+  margin: 0 10px;
+  width: 40px;
+  height: 7vh;
+  overflow: hidden;
+  border-radius: 50px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.user_name {
+  margin: 0 10px;
+}
+
+#auth_menu {
+  margin: 0 10px;
+  cursor: pointer;
+  i {
+    margin: 0 5px;
+  }
+  #sort {
+    transition: all 1s ease-in;
+  }
+  ul {
+    background-color: #000000e6;
+    list-style: none;
+    position: absolute;
+    top: -23vh;
+    right: -15px;
+    opacity: 0;
+    transition: all 1s ease-in;
+
+    li {
+      font-size: 10px;
+      padding: 10px;
+      border: 1px solid #8202026e;
+      transition: all 1s ease-in;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    li:hover {
+      background-color: #3d36368f;
+    }
+  }
+}
+
+main {
+  min-height: 89vh;
+  margin-top: 11vh;
+  padding: 20px;
+}
+
+.justify-center {
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+
+
+@media all and (max-width: 500px) {
+  .user_name {
+    display: none;
+  }
+  .container {
+    padding-right: 0;
+  }
+}

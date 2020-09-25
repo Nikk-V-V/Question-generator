@@ -1,0 +1,140 @@
+.quest-creat-cont {
+  padding: 20px;
+  margin-top: 15px;
+  border-top: 3px solid #ff000033;
+  background-color: #000a414a;
+}
+
+.quests {
+  margin-top: 20px;
+  overflow: hidden;
+  height: 0px;
+}
+
+input {
+  text-align: center;
+}
+
+p {
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.quest-option {
+  flex-wrap: wrap;
+}
+.quantity {
+  text-align: center;
+  width: 50px;
+}
+.description {
+  width: 60%;
+  min-width: 100px;
+  height: 150px;
+  padding: 15px;
+  background-color: #0003ff21;
+  border: 1px solid #0003ed;
+  border-radius: 10px;
+  resize: none;
+}
+.description:focus {
+  border: 1px solid white;
+}
+.change-file {
+  display: none;
+}
+.image {
+  border: 3px solid;
+  border-radius: 14px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  i {
+    font-size: 60px;
+  }
+}
+
+.image:hover {
+  border: 3px dashed;
+}
+
+.quest {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.title-chose-panel {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.quest-cont {
+  width: 100px;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 15px;
+  background-color: #00010a;
+
+}
+
+.quest-img {
+  height: 50px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.quest-title {
+  margin: 15px 0;
+}
+
+.choose {
+  width: 15px;
+  background-color: #9900009e;
+  height: 15px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.cont {
+  padding-top: 20px;
+  height: 0px;
+  overflow: hidden;
+}
+
+.show-hidden-new-quest {
+  i {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+
+input:focus {
+  border-bottom: 1px solid #0003ed;
+}
+
+textarea{
+  border: 1px solid #0003ed;
+}

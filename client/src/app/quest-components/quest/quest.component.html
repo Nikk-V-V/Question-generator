@@ -1,0 +1,58 @@
+<section>
+  <div *ngIf="queries[queryNumber]?.file">
+    <div *ngIf="isVideoImg" class="queryImg d-flex justify-center">
+      <img [src]="queries[queryNumber]?.file" alt="">
+    </div>
+    <div *ngIf="!isVideoImg" class="queryVideo">
+      <p class="check-video">Для початку переглянте відео</p>
+      <video
+        preload="none"
+        type="video/mp4"
+        class="video"
+        autoplay
+        controls [src]="queries[queryNumber]?.file"
+      >
+      </video>
+    </div>
+  </div>
+  <div
+    [innerHTML]="queries[queryNumber]?.title"
+    class="query-title"
+  >
+  </div>
+  <div class="answers d-flex j-around">
+    <div
+      *ngFor="let answer of queries[queryNumber]?.answers"
+      class="answer"
+      (click)="check($event, answer)"
+    >
+      <div class="answer-text" [innerHTML]="answer"></div>
+      <div class="check">
+        <i class="chk far fa-check-circle"></i>
+      </div>
+    </div>
+  </div>
+  <button [disabled]="disabled" (click)="chooseAnswer(value)" class="btn">Перевірити</button>
+</section>
+
+<aside>
+  <section>
+    <div class="quantity">
+      Всьго етапів: {{queries.length}}
+    </div>
+    <div class="queries">
+      <div *ngFor="let q of queries" class="query">
+        {{q?.title}}
+      </div>
+    </div>
+  </section>
+</aside>
+
+<div id="model" class="d-flex justify-center flex-center">
+  <div>
+    <div class="result">
+      Завдання завершено <i class="fas fa-check-circle"></i>
+    </div>
+    <div routerLink="/tasks" class="btn">Завершити</div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="quest-creat-cont">
+  <div (click)="show_('quest','arrow-quest')" class="show-hidden-new-quest d-flex justify-center">
+    Новий квест
+    <i id="arrow-quest" class="fas fa-arrow-alt-circle-up"></i>
+  </div>
+  <form  id="quest" [formGroup]="form" (ngSubmit)="onSubmit()" class="quests">
+    <div class="d-flex flex-center quest-option">
+      <div class="d-flex justify-center quest">
+        <label>
+          <input formControlName="title" class="title" type="text">
+        </label>
+      </div>
+      <div class="d-flex justify-center quest">
+        <textarea formControlName='description' class="description"></textarea>
+      </div>
+      <p>Картинка:</p>
+      <div id="image-quest" class="image d-flex flex-center justify-center">
+        <label>
+          <input (change)="onFileSelect($event)" class="change-file" type="file">
+          <i *ngIf="!imagePreview" class="fas fa-plus"></i>
+          <img *ngIf="imagePreview" [src]="imagePreview" alt="">
+        </label>
+      </div>
+      <div class="btn-submit">
+        <button type="submit" [disabled]="form.disabled">
+          Створити
+        </button>
+      </div>
+    </div>
+  </form>
+  <div>
+    <h1 (click)="show_('query','arrow-query')"  class="title-chose-panel">
+      Ваші квести. Оберіть щоб додати запитання та відповіді.
+      <i id="arrow-query" class="fas fa-arrow-alt-circle-up"></i>
+    </h1>
+  </div>
+  <div  id="query" class="query cont">
+    <div *ngIf="quests" class="query-container d-flex j-around">
+      <div *ngFor="let quest of quests" class="quest-cont">
+        <div class="quest-img">
+          <img src="{{quest.image}}" alt="">
+        </div>
+        <div class="quest-title">
+          {{quest.title}}
+        </div>
+        <div (click)="chooseQuest($event, quest._id)" class="choose">
+        </div>
+      </div>
+    </div>
+    <div>
+      <app-query></app-query>
+    </div>
+  </div>
+</div>

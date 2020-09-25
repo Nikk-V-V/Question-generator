@@ -1,0 +1,68 @@
+<form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <div class="email">
+      <input
+        id="login"
+        type="text"
+        placeholder="Логін"
+        formControlName="login"
+        [ngClass]="{'invalid': form.get('login').invalid && form.get('login').touched}"
+      >
+      <span
+        class="helper-text red-text"
+        *ngIf="form.get('login').invalid && form.get('email').touched"
+      >
+          <span *ngIf="form.get('login').errors['required']">Login не має бути пустим</span>
+          <span *ngIf="form.get('login').errors['login']">Введіть коректний email</span>
+        </span>
+    </div>
+    <div class="email">
+      <input
+        id="email"
+        type="email"
+        placeholder="Емаіл"
+        formControlName="email"
+        [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
+      >
+      <span
+        class="helper-text red-text"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+      >
+          <span *ngIf="form.get('email').errors['required']">Email не має бути пустим</span>
+          <span *ngIf="form.get('email').errors['email']">Введіть коректний email</span>
+        </span>
+    </div>
+    <div class="password">
+      <input
+        id="password"
+        type="password"
+        placeholder="Пароль"
+        formControlName="password"
+        [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+      >
+      <span
+        class="helper-text red-text"
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+      >
+          <span *ngIf="form.get('password').errors['required']">
+            Пароль не має бути пустим
+          </span>
+          <span
+            *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']"
+          >
+            Пароль має бути більше {{form.get('password').errors['minlength']['requiredLength']}} символів.
+            Сейчас {{form.get('password').errors['minlength']['actualLength']}}
+          </span>
+        </span>
+    </div>
+  </div>
+  <div class="card-action">
+    <button
+      class="modal-action btn waves-effect"
+      type="submit"
+      [disabled]="form.invalid || form.disabled"
+    >
+      Створити
+    </button>
+  </div>
+</form>
